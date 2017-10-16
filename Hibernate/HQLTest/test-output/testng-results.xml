@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="844" started-at="2017-10-16T07:11:02Z" finished-at="2017-10-16T07:11:03Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="844" started-at="2017-10-16T07:11:02Z" finished-at="2017-10-16T07:11:03Z">
+      <class name="com.qin.domain.Test2">
+        <test-method status="PASS" signature="test3()[pri:0, instance:com.qin.domain.Test2@396a51ab]" name="test3" duration-ms="829" started-at="2017-10-16T15:11:02Z" finished-at="2017-10-16T15:11:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test3 -->
+      </class> <!-- com.qin.domain.Test2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

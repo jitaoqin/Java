@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="485" started-at="2017-10-10T03:35:29Z" finished-at="2017-10-10T03:35:29Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="485" started-at="2017-10-10T03:35:29Z" finished-at="2017-10-10T03:35:29Z">
+      <class name="com.smart.autoproxy.BeanNameAutoProxyCreatorTest">
+        <test-method status="PASS" signature="autoProxy()[pri:0, instance:com.smart.autoproxy.BeanNameAutoProxyCreatorTest@2a2d45ba]" name="autoProxy" duration-ms="469" started-at="2017-10-10T11:35:29Z" finished-at="2017-10-10T11:35:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- autoProxy -->
+      </class> <!-- com.smart.autoproxy.BeanNameAutoProxyCreatorTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
