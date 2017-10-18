@@ -3,6 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!-- contextConnfigLocation指定业务层Spring容器的配置文件（逗号隔开）,
+		ContextLoaderListener通过contextConfigLocation参数指定的Spring配置文件,启动业务层的Spring容器 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/applicationContext.xml</param-value>
@@ -10,15 +12,16 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
+     
+     <!-- 默认自动加载/WEB-INF/smart-servlet.xml的spring配置文件,启动Web层的Spring容器 -->
 	<servlet>
-		<servlet-name>smart</servlet-name>
+		<servlet-name>applicationContext</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>smart</servlet-name>
+		<servlet-name>applicationContext</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 

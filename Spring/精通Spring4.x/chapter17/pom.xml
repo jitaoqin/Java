@@ -55,13 +55,25 @@
             <artifactId>itext</artifactId>
             <version>2.0.7</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.lowagie</groupId>
             <artifactId>iTextAsian</artifactId>
             <version>2.0.7</version>
             <scope>system</scope>
             <systemPath>${basedir}/../libs/iTextAsian.jar</systemPath>
-        </dependency>
+        </dependency> -->
+        <dependency>
+    		<groupId>com.lowagie</groupId>
+    		<artifactId>itext</artifactId>
+   			<version>2.1.7</version>
+		</dependency>
+        
+       <!--  <dependency>
+    		<groupId>com.itextpdf</groupId>
+    		<artifactId>itext-asian</artifactId>
+    		<version>5.2.0</version>
+		</dependency> -->
+        
         <dependency>
             <groupId>freemarker</groupId>
             <artifactId>freemarker</artifactId>
@@ -227,6 +239,17 @@
                     <encoding>UTF-8</encoding>
                     <debug>true</debug>
                 </configuration>
+            </plugin>
+            <plugin>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.6</source>
+                  <target>1.6</target>
+                  <encoding>UTF-8</encoding>
+                  <compilerArguments>
+                   <extdirs>src\main\webapp\WEB-INF\lib</extdirs>
+                 </compilerArguments>
+              </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
