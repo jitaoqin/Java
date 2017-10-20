@@ -17,6 +17,7 @@
 <title>userInfo</title>
 </head>
 <body>
+<%=basePath%>
 	用户信息     昵称： ${userInfo.userName} 用户id：${userInfo.uId}  用户电话:${userInfo.tel }  
 	                  注册时间： <fmt:formatDate value="${userInfo.registerTime }" pattern="yyyy-MM-dd HH:mm:ss"/>
 	                  <%-- 角色：[<c:forEach items="${ userInfo.acctRoles}" var="role">
