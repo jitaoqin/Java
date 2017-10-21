@@ -22,10 +22,12 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@XStreamAlias("user")
 public class User implements Serializable {
 	
 	/*
@@ -43,7 +45,9 @@ public class User implements Serializable {
 	@GenericGenerator(name="id",strategy="assigned")
 	@Column(length=36)
 	private String uId;
+	@XStreamAlias("userName")
 	private String userName;
+	@XStreamAlias("tel")
 	private String tel;
 	
 	@Temporal(TemporalType.TIMESTAMP)  

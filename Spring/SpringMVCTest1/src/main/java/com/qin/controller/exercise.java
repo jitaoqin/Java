@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -115,6 +118,31 @@ public class exercise {
 			byte[] fileData = FileCopyUtils.copyToByteArray(resource.getInputStream());
 			return fileData;
 		}
+		
+		@RequestMapping("/test9")
+		public  String test9(HttpEntity<String> httpEntity) {
+			long contentLen = httpEntity.getHeaders().getContentLength();
+			System.out.println(httpEntity.getBody());
+			return "/exercise/test";
+		}
+		
+		@RequestMapping(value="test10/{imageId}")
+		public ResponseEntity<byte[]> test10(@PathVariable("imageId") String imageId) throws IOException{
+			Resource resource = new ClassPathResource("/images/wolf.jpg");
+			byte[] fileData = FileCopyUtils.copyToByteArray(resource.getInputStream());
+			ResponseEntity<byte[]> responseEntity = 
+					new ResponseEntity<byte[]>(fileData,HttpStatus.OK);
+			return responseEntity;
+		}
+		
+		@RequestMapping(value="/test11")
+		public ResponseEntity<User> test11(HttpEntity<User> requestEntity){
+			User user = requestEntity.getBody();
+			user.setuId("1000");
+			System.out.println(new ResponseEntity<User>(user,HttpStatus.OK));
+			return new ResponseEntity<User>(user,HttpStatus.OK);
+		}
+		
 	
 
 }
