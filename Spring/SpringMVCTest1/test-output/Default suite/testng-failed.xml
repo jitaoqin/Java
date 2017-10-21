@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qin.controller.UserControllerTest">
         <methods>
-          <include name="test1"/>
+          <include name="test12"/>
         </methods>
       </class> <!-- com.qin.controller.UserControllerTest -->
     </classes>

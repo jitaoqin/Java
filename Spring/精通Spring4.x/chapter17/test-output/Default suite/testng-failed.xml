@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.smart.web.UserControllerTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="testhandle61"/>
+          <include name="testhandle71"/>
+          <include name="testhandle82"/>
+          <include name="testhandle41"/>
+          <include name="testhandle63"/>
+          <include name="testhandle62"/>
+          <include name="testhandle81"/>
+          <include name="testhandle91"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="testhandle43"/>
+          <include name="testhandle42"/>
+          <include name="testhandle44"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.smart.web.UserControllerTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

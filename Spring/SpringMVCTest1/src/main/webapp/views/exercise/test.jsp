@@ -41,5 +41,33 @@
 	<a href="<%=basePath%>/test5/select;name=lilei,hanmeimei,xiaoqin;num=3">test5</a></br>
 	<!-- ****************************test5*************************************** -->
 	<a href="<%=basePath%>/test6">test6</a></br>
+	<!-- ****************************test3*************************************** -->
+	<form action="<%=basePath%>/test13" method="post">	 
+	用户ID<input type="text" name="uId" 		/> ${userInfo.uId}</br>
+			用户名<input type="text" name="userName" /> ${userInfo.userName}</br>
+			电  话<input type="text" name="tel" 		/> ${userInfo.tel}</br>
+			${userInfo.registerTime}
+		<input type="submit" value="test13"/>
+	</form>
+	<!-- ****************************test3*************************************** -->
+	<form action="<%=basePath%>/test14" method="post">	 
+			用户ID<input type="text" name="uId" 		/> ${userInfo.uId}</br>
+			用户名<input type="text" name="userName" /> ${user.userName}</br>
+			电  话<input type="text" name="tel" 		/> ${userInfo.tel}</br>
+			电  话<input type="text" name="registerTime" 	/> ${userInfo.registerTime}</br>
+		<input type="submit" value="test14"/>
+	</form>
+	<!-- ****************************test15*************************************** -->
+	<form action="<%=basePath%>/test15" method="post">	 
+			用户ID<input type="text" name="uId" 		/> ${userInfo.uId}</br>
+			用  户  名<input type="text" name="userName" /> ${userInfo.userName}</br>
+			电    话<input type="text" name="tel" 		/> ${userInfo.tel}</br>
+			注册日期<input type="text" name="registerTime" 	/> ${userInfo.registerTime}</br>
+		<input type="submit" value="test15"/>
+	</form>
+	<!-- ****************************test16*************************************** -->
+	<a href="<%=basePath%>/test16">test16 : 下载excel</a></br>
+	<!-- ****************************test16*************************************** -->
+	<a href="<%=basePath%>/test17">test17 : 下载excel</a></br>
 </body>
 </html>

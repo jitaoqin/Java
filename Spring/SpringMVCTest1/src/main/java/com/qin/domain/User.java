@@ -16,13 +16,19 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
@@ -44,13 +50,21 @@ public class User implements Serializable {
 	@GeneratedValue(generator="id")
 	@GenericGenerator(name="id",strategy="assigned")
 	@Column(length=36)
+	//@Length(min=2,max=100)
 	private String uId;
-	@XStreamAlias("userName")
+	
+	@XStreamAsAttribute
+	//@Pattern(regexp="w{4,30}")//匹配4-30个包含字符数字下划线的字符
 	private String userName;
-	@XStreamAlias("tel")
+	
+	@XStreamAsAttribute
+	//@Pattern(regexp="S{6,30}")//匹配6-30个非空白的字符
 	private String tel;
 	
-	@Temporal(TemporalType.TIMESTAMP)  
+	@Temporal(TemporalType.TIMESTAMP)
+	@XStreamAsAttribute
+	//@Past//时间必须是一个过去的时间
+	@DateTimeFormat(pattern="yyyy-MM-dd")	//@NumberFormat(pattern="#,###.##")
 	private Date registerTime;
 	
 	@JsonIgnoreProperties(value={"users","authorities"})

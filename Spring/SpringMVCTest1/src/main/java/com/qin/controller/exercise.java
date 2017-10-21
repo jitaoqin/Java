@@ -1,10 +1,17 @@
 package com.qin.controller;
 
+
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
 import java.io.IOException;
 import java.io.OutputStream;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,10 +23,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.MatrixVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -27,14 +35,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.servlet.ModelAndView;
+
 
 import com.qin.domain.User;
 
-import javassist.expr.NewArray;
+
 
 @Controller
-
 public class exercise {
 
 	// ①使用@RequestParam绑定请求参数值，返回字符串代表逻辑视图名
@@ -135,13 +144,100 @@ public class exercise {
 			return responseEntity;
 		}
 		
-		@RequestMapping(value="/test11")
-		public ResponseEntity<User> test11(HttpEntity<User> requestEntity){
+		@RequestMapping(value="/test11")//返回xm数据或json
+		public ResponseEntity<User> test11(HttpEntity<User> requestEntity){			
 			User user = requestEntity.getBody();
 			user.setuId("1000");
 			System.out.println(new ResponseEntity<User>(user,HttpStatus.OK));
 			return new ResponseEntity<User>(user,HttpStatus.OK);
 		}
+		
+		@RequestMapping("/test12")		
+		public Callable<User> test12(){
+			System.out.println("==== hello");
+			return new Callable<User>() {
+				@Override
+				public User call() throws Exception {
+					Thread.sleep(2000);
+					User user = new User();
+					user.setuId("1234");
+					user.setUserName("haha");
+					return user;
+				}
+			};
+		}
+		
+		@RequestMapping("/test13")// 使用@ModelAttribute将方法入参添加到对象模型
+		public String test13(@ModelAttribute("userInfo") User user){
+			System.out.println("test13 "+user);
+			//model.addAttribute("testName", "test13:ModelAttribute 使用方法");
+			return "/exercise/test";
+		}
+		
+		//在访问exercise中的任何一个方法之前，都会事前执行@ModelAttribute的getUser方法，并将返回值添加到模型中
+		//由于test13方法入参有@ModelAttribute("user")和getUser注解一致，这时，springmvc先获取getUser模型属性赋值给test13的入参，
+		//然后根据http请求对user进行填充覆盖，得到一个最终的User对象。
+		@ModelAttribute("userInfo")//空字符不能覆盖
+		public User getUserInfo(){
+			User user = new User();
+			user.setUserName("TAOTAO");	
+			user.setRegisterTime(new Date());
+			System.out.println("getUser ：" + user);
+			return user;
+		}
+		
+		@RequestMapping("/test14")// 使用@ModelAttribute将方法入参添加到对象模型
+		public String test14(ModelMap modelMap){
+			modelMap.addAttribute("key1","value1");
+			System.out.println(modelMap);
+			User user = (User) modelMap.get("userInfo");
+			user.setuId("14");
+			System.out.println("test14 "+user);
+			//model.addAttribute("testName", "test13:ModelAttribute 使用方法");
+			return "/exercise/test";
+		} 
+		
+		// 使用formattingConversion 格式转换类型
+		@RequestMapping("/test15")
+		public String test15(@ModelAttribute("userInfo") User user){	
+			System.out.println("test15 "+ user);			
+			return "/exercise/test";
+		} 
+		
+		//excel 使用
+		@RequestMapping("/test16")
+		public String test16(ModelMap modelMap){	
+			User user1 = new User("0001","曹操","18241891686",new Date());			
+			User user2 = new User("0002","郭嘉","18241891687",new Date());			
+			User user3 = new User("0003","夏侯惇","18241891688",new Date());			
+			User user4 = new User("0004","夏侯渊","18241891689",new Date());			
+			User user5 = new User("0005","许褚","18241891685",new Date());
+			List<User> userList = new ArrayList<>();
+			userList.add(user1);
+			userList.add(user2);
+			userList.add(user3);
+			userList.add(user4);
+			userList.add(user5);
+			modelMap.addAttribute(userList);
+			return "userListExcel";
+		} 
+		
+		@RequestMapping("/test17")
+		public String test17(ModelMap modelMap){	
+			User user1 = new User("0001","曹操","18241891686",new Date());			
+			User user2 = new User("0002","郭嘉","18241891687",new Date());			
+			User user3 = new User("0003","夏侯惇","18241891688",new Date());			
+			User user4 = new User("0004","夏侯渊","18241891689",new Date());			
+			User user5 = new User("0005","许褚","18241891685",new Date());
+			List<User> userList = new ArrayList<>();
+			userList.add(user1);
+			userList.add(user2);
+			userList.add(user3);
+			userList.add(user4);
+			userList.add(user5);
+			modelMap.addAttribute(userList);
+			return "userListPdf";
+		} 
 		
 	
 
