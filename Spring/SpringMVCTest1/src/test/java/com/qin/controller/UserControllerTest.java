@@ -2,12 +2,13 @@ package com.qin.controller;
 
 
 
+import org.testng.annotations.Test;
 import java.io.IOException;
 
-import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpRequest;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -15,6 +16,8 @@ import org.springframework.web.client.RestTemplate;
 
 
 public class UserControllerTest {
+	
+	
 
 	@Test
 	public void test1(){
