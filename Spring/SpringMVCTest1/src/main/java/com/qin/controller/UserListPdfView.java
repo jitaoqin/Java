@@ -7,19 +7,11 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.time.DateFormatUtils;
-import org.eclipse.jetty.server.Iso88591HttpWriter;
 import org.springframework.web.servlet.view.document.AbstractPdfView;
 
-import com.lowagie.text.BadElementException;
-import com.lowagie.text.Cell;
-import com.lowagie.text.Document;
-import com.lowagie.text.Element;
-import com.lowagie.text.Font;
-import com.lowagie.text.Phrase;
-import com.lowagie.text.Table;
-import com.lowagie.text.pdf.BaseFont;
-import com.lowagie.text.pdf.PdfWriter;
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.qin.domain.User;
 
 public class UserListPdfView extends AbstractPdfView{
@@ -54,6 +46,22 @@ public class UserListPdfView extends AbstractPdfView{
 		
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	private Cell buildFontCell(String content, Font font) throws BadElementException{
 		Phrase phrase = new Phrase(content,font);
