@@ -10,6 +10,8 @@ import javax.persistence.InheritanceType;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import com.qin.domain.Post;
+
 /**
  *<br>
  * <b>类描述:</b>
