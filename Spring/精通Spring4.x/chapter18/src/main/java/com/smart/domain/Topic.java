@@ -3,6 +3,8 @@ package com.smart.domain;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import com.qin.domain.MainPost;
+
 import javax.persistence.*;
 import java.util.Date;
 
