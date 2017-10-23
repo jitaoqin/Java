@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC
+ "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="sampledb" match-name="t_board"/>
+  <table-filter match-catalog="sampledb" match-name="t_board_manager"/>
+  <table-filter match-catalog="sampledb" match-name="t_forum"/>
+  <table-filter match-catalog="sampledb" match-name="t_post"/>
+  <table-filter match-catalog="sampledb" match-name="t_post_id"/>
+  <table-filter match-catalog="sampledb" match-name="t_topic"/>
+  <table-filter match-catalog="sampledb" match-name="t_user"/>
+  <table-filter match-catalog="sampledb" match-name="t_login_log"/>
+</hibernate-reverse-engineering>
