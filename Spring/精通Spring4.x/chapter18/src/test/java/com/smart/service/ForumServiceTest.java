@@ -1,6 +1,6 @@
 package com.smart.service;
 
-import com.qin.domain.MainPost;
+import com.smart.domain.MainPost;
 import com.smart.domain.*;
 import com.smart.test.dataset.util.XlsDataSetBeanFactory;
 import org.hibernate.SessionFactory;
