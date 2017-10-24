@@ -14,7 +14,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 	
 	<bean id="userListExcel" class="com.qin.controller.UserListExcelView"/>
-	<bean id="userListPdf" class="com.qin.controller.UserListPdfView"/>
+	
 	<bean id="userListXml" class="org.springframework.web.servlet.view.xml.MarshallingView"
 			p:modelKey="userList"
 			p:marshaller-ref="xmlMarshaller"/>

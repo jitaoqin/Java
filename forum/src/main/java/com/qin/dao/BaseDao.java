@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.util.Assert;
 
 
@@ -41,7 +41,7 @@ public class BaseDao<T> {
 	}
 
 	// 获取PO的所有对象
-	public List<T> loadALL() {
+	public List<T> loadAll() {
 		return getHibernateTemplate().loadAll(entityClass);
 	}
 

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="1" failed="0" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="120" started-at="2017-10-23T01:01:35Z" finished-at="2017-10-23T01:01:35Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="120" started-at="2017-10-23T01:01:35Z" finished-at="2017-10-23T01:01:35Z">
+      <class name="com.qin.dao.BoardDaoTest">
+        <test-method status="FAIL" signature="unitilsBeforeClass()[pri:0, instance:com.qin.dao.BoardDaoTest@3d99d22e]" name="unitilsBeforeClass" is-config="true" duration-ms="0" started-at="2017-10-23T09:01:35Z" finished-at="2017-10-23T09:01:35Z">
+          <exception class="org.unitils.core.UnitilsException">
+            <message>
+              <![CDATA[An exception occured during the loading of core module hibernate with module class name org.unitils.orm.hibernate.HibernateModule]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.unitils.core.UnitilsException: An exception occured during the loading of core module hibernate with module class name org.unitils.orm.hibernate.HibernateModule
+	at org.unitils.core.ModulesLoader.createAndInitializeModules(ModulesLoader.java:154)
+	at org.unitils.core.ModulesLoader.loadModules(ModulesLoader.java:121)
+	at org.unitils.core.Unitils.createModulesRepository(Unitils.java:222)
+	at org.unitils.core.Unitils.init(Unitils.java:118)
+	at org.unitils.core.Unitils.init(Unitils.java:105)
+	at org.unitils.core.Unitils.initSingletonInstance(Unitils.java:74)
+	at org.unitils.core.Unitils.getInstance(Unitils.java:52)
+	at org.unitils.UnitilsTestNG.getUnitils(UnitilsTestNG.java:162)
+	at org.unitils.UnitilsTestNG.getTestListener(UnitilsTestNG.java:152)
+	at org.unitils.UnitilsTestNG.unitilsBeforeClass(UnitilsTestNG.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:175)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:107)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.unitils.core.UnitilsException: Could not load class with name org.hibernate.cfg.AnnotationConfiguration
+	at org.unitils.util.ReflectionUtils.getClassWithName(ReflectionUtils.java:612)
+	at org.unitils.orm.hibernate.HibernateModule.init(HibernateModule.java:91)
+	at org.unitils.core.ModulesLoader.createAndInitializeModules(ModulesLoader.java:151)
+	... 33 more
+Caused by: java.lang.ClassNotFoundException: org.hibernate.cfg.AnnotationConfiguration
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.unitils.util.ReflectionUtils.getClassWithName(ReflectionUtils.java:609)
+	... 35 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.unitils.core.UnitilsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unitilsBeforeClass -->
+        <test-method status="SKIP" signature="unitilsBeforeTestSetUp(java.lang.reflect.Method)[pri:0, instance:com.qin.dao.BoardDaoTest@3d99d22e]" name="unitilsBeforeTestSetUp" is-config="true" duration-ms="0" started-at="2017-10-23T09:01:35Z" finished-at="2017-10-23T09:01:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unitilsBeforeTestSetUp -->
+        <test-method status="SKIP" signature="addBoard()[pri:0, instance:com.qin.dao.BoardDaoTest@3d99d22e]" name="addBoard" duration-ms="0" started-at="2017-10-23T09:01:35Z" finished-at="2017-10-23T09:01:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addBoard -->
+        <test-method status="PASS" signature="unitilsAfterTestTearDown(java.lang.reflect.Method)[pri:0, instance:com.qin.dao.BoardDaoTest@3d99d22e]" name="unitilsAfterTestTearDown" is-config="true" duration-ms="0" started-at="2017-10-23T09:01:35Z" finished-at="2017-10-23T09:01:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qin.dao.BoardDaoTest.addBoard() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unitilsAfterTestTearDown -->
+      </class> <!-- com.qin.dao.BoardDaoTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

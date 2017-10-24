@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>forum</groupId>
 	<artifactId>forum</artifactId>
 	<packaging>war</packaging>
-	
+
 	<version>0.0.1-SNAPSHOT</version>
 	<name>forum Maven Webapp</name>
-	<url>http://maven.apache.org</url>	
-	
+	<url>http://maven.apache.org</url>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -69,11 +69,11 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>${commons-dbcp.version}</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
 			<version>1.0</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -131,47 +131,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-core</artifactId>
-			<version>${unitils.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-testng</artifactId>
-			<version>${unitils.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-spring</artifactId>
-			<version>${unitils.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-orm</artifactId>
-			<version>${unitils.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-database</artifactId>
-			<version>${unitils.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-dbmaintainer</artifactId>
-			<version>${unitils.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-dbunit</artifactId>
-			<version>${unitils.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.dbunit</groupId>
-					<artifactId>dbunit</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		
 
 		<!-- aspectj依赖(spring依赖) -->
 		<dependency>
@@ -249,12 +209,33 @@
 		</dependency>
 
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>1.0.0.Final</version>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>5.0.1.Final</version>
+		</dependency> -->
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.4.01</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 	</dependencies>
+
 
 
 
