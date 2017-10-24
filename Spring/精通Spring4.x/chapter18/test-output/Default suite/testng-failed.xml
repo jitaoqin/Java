@@ -3,16 +3,20 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.smart.dao.BoardDaoTest">
+      <class name="com.smart.service.ForumServiceTest">
         <methods>
-          <include name="addBoard"/>
           <include name="unitilsBeforeTestSetUp"/>
+          <include name="addBoardManager"/>
           <include name="unitilsAfterTestTearDown"/>
-          <include name="getBoard"/>
-          <include name="removeBoard"/>
+          <include name="removeTopic"/>
+          <include name="addPost"/>
+          <include name="addTopic"/>
           <include name="unitilsBeforeClass"/>
+          <include name="makeDigestTopic"/>
+          <include name="addBoard"/>
+          <include name="removePost"/>
         </methods>
-      </class> <!-- com.smart.dao.BoardDaoTest -->
+      </class> <!-- com.smart.service.ForumServiceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
