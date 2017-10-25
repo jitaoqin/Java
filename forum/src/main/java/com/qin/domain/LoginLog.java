@@ -5,6 +5,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
+
+import java.util.Date;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -29,17 +32,17 @@ public class LoginLog implements java.io.Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 	private String ip;
-	private String loginDatetime;
+	private Date loginDatetime;
 
 	public LoginLog() {
 	}
 
-	public LoginLog(String ip, String loginDatetime) {
+	public LoginLog(String ip, Date loginDatetime) {
 		this.ip = ip;
 		this.loginDatetime = loginDatetime;
 	}
 
-	public LoginLog(User user, String ip, String loginDatetime) {
+	public LoginLog(User user, String ip, Date loginDatetime) {
 		this.user = user;
 		this.ip = ip;
 		this.loginDatetime = loginDatetime;
@@ -77,11 +80,11 @@ public class LoginLog implements java.io.Serializable {
 	}
 
 	@Column(name = "login_datetime", nullable = false, length = 30)
-	public String getLoginDatetime() {
+	public Date getLoginDatetime() {
 		return this.loginDatetime;
 	}
 
-	public void setLoginDatetime(String loginDatetime) {
+	public void setLoginDatetime(Date loginDatetime) {
 		this.loginDatetime = loginDatetime;
 	}
 

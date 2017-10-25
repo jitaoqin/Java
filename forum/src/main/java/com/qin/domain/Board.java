@@ -28,15 +28,20 @@ import com.qin.domain.User;
  * READ_WRITE：读写模式，该模式会更新缓存的时候会对环村里面的数据加锁，其他事物如果去取相应的缓存数据，发现被锁了，就会直接去数据库查询
  * NONSTRICT_READ_WRITE:不严格的读写模式，使用该模式不会对缓存数据加锁
  */
-@Entity
-@Table(name = "t_board", catalog = "sampledb")
+@Entity(name="Board")
+@Table(name = "t_board")
 @Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 
 public class Board extends BaseDomain{
-
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "board_id", unique = true, nullable = false)
 	private Integer boardId;
+	@Column(name = "board_name", nullable = false, length = 150)
 	private String boardName;
+	@Column(name = "board_desc")
 	private String boardDesc;
+	@Column(name = "topic_num", nullable = false)
 	private int topicNum;
 	
 	@Autowired
@@ -57,9 +62,7 @@ public class Board extends BaseDomain{
 		this.topicNum = topicNum;
 	}
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "board_id", unique = true, nullable = false)
+	
 	public Integer getBoardId() {
 		return this.boardId;
 	}
@@ -68,7 +71,7 @@ public class Board extends BaseDomain{
 		this.boardId = boardId;
 	}
 
-	@Column(name = "board_name", nullable = false, length = 150)
+	
 	public String getBoardName() {
 		return this.boardName;
 	}
@@ -77,7 +80,7 @@ public class Board extends BaseDomain{
 		this.boardName = boardName;
 	}
 
-	@Column(name = "board_desc")
+	
 	public String getBoardDesc() {
 		return this.boardDesc;
 	}
@@ -86,7 +89,7 @@ public class Board extends BaseDomain{
 		this.boardDesc = boardDesc;
 	}
 
-	@Column(name = "topic_num", nullable = false)
+	
 	public int getTopicNum() {
 		return this.topicNum;
 	}
