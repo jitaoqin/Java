@@ -14,7 +14,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.testng.annotations.BeforeMethod;
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ebd98d7e9f399538e889effbc9c504091dd51ac3
 import java.util.Map;
 
 import static org.testng.Assert.assertEquals;

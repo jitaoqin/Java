@@ -7,7 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.interceptor.CacheOperationInvoker.ThrowableWrapper;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 
+=======
+import com.opera.core.systems.scope.services.ums.UmsServices;
+>>>>>>> ebd98d7e9f399538e889effbc9c504091dd51ac3
 import com.qin.dao.LoginLogDao;
 import com.qin.dao.UserDao;
 import com.qin.domain.LoginLog;

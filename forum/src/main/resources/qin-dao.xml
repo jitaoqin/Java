@@ -25,6 +25,7 @@
 				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
+<<<<<<< HEAD
 				<!-- <prop key="hibernate.cache.use_second_level_cache">true</prop>
 				<prop key="hibernate.cache.use_query_cache">true</prop>
 				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
@@ -32,6 +33,15 @@
 			</props>
 		</property>
 		<property name="packagesToScan" value="com.qin.domain.*"/>
+=======
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+				<prop key="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</prop>
+			</props>
+		</property>
+		<property name="packagesToScan" value="com.qin.domain"/>
+>>>>>>> ebd98d7e9f399538e889effbc9c504091dd51ac3
 	</bean>
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate"
 		p:sessionFactory-ref="sessionFactory" />

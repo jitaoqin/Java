@@ -9,8 +9,13 @@ import com.qin.domain.User;
  */
 @Repository
 public class UserDao extends BaseDao<User> {
+<<<<<<< HEAD
 	private static final String GET_USER_BY_USERNAME =   " from com.qin.domain.User u where u.userName = ?";	
 	private static final String QUERY_USER_BY_USERNAME = " from com.qin.domain.User u where u.userName like ?";
+=======
+	private static final String GET_USER_BY_USERNAME = "from User u where u.userName = ?";	
+	private static final String QUERY_USER_BY_USERNAME = "from User u where u.userName like ?";
+>>>>>>> ebd98d7e9f399538e889effbc9c504091dd51ac3
 	
     /**
      * 根据用户名查询User对象
